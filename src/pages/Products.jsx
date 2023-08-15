@@ -1,4 +1,6 @@
 import React from 'react'
+import styled from 'styled-components'
+import { Button } from '../UI/Button'
 
 export const DUMMY_PRODUCTS = [
     {
@@ -18,20 +20,63 @@ export const DUMMY_PRODUCTS = [
         title: 'IPhone 12 pro',
         price: 650,
         id: 'e4zodm1vp',
-        image: 'https://telefon.kg/image/catalog/new/Phones/Apple/iPhone%2012%20Pro/5.png',
+        image: 'https://mm.kh.ua/image/cache/catalog/iphone/39730-1000x1000-product_popup.jpg',
     },
   ]
 
 export const Products = () => {
   return (
-    <div>
+
+    <>
+      <Container>
         {DUMMY_PRODUCTS.map((phone)=>{
-            return <div key={phone.id}>
+            return <Content key={phone.id}>
                 <img src={phone.image} alt={phone.title} />
-                <b>{phone.title}</b>
-                <p>$ {phone.price}</p>
-            </div>
+                <h2>{phone.title}</h2>
+                <b>$ {phone.price}</b>
+            </Content>
         })}
-    </div>
+       
+      </Container>
+      <Block>
+        <Button>Go Back</Button>
+      </Block>
+    </>
+    
   )
 }
+
+
+const Container = styled('div')`
+    background-color: #83ccde;
+    display: flex;
+    justify-content:space-around ;
+    width: 100%;
+    height: 470px;
+
+`
+
+const Content = styled('div')`
+    width: 260px;
+    height: 370px;
+    border-radius: 8px;
+    background-color: white;
+    padding: 10px;
+    margin-top: 40px;
+    & > img{
+        width: 240px;
+        height: 280px;
+    }
+
+ 
+
+`
+const Block = styled('div')`
+    background-color:#83ccde ;
+    width: 100%;
+    height: 200px;
+    padding-left: 30px;
+    
+     
+
+`

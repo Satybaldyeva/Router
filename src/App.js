@@ -5,6 +5,7 @@ import { Products } from './pages/Products';
 import { MyCart } from './pages/MyCart';
 import { MyOrders } from './pages/MyOrders';
 import styled from 'styled-components'
+import { ProductDetail } from './pages/ProductDetails';
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
         <Route path='/products' element={<Products/>}/>
         <Route path='/my-cart' element={<MyCart/>}/>
         <Route path='/my-orders' element={<MyOrders/>}/>
+        <Route path='/products/:productId' element={<ProductDetail/>}/>
        </Routes>
       </>
      

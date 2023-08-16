@@ -1,5 +1,5 @@
 
-import { Route, Routes, Link } from 'react-router-dom';
+import { Route, Routes, NavLink } from 'react-router-dom';
 import './App.css';
 import { Products } from './pages/Products';
 import { MyCart } from './pages/MyCart';
@@ -14,10 +14,38 @@ function App() {
          <StyledHeader>
           <h2>iStore</h2>
           <nav>
-          <Link to={'/'}><div></div></Link>
-          <Link to={'/products'}>Products</Link>
-          <Link to={'/my-cart'}>My Cart</Link>
-          <Link to={'/my-orders'}>My Orders</Link>
+          <NavLink style={(props)=>{
+            if(props.isActive){
+              return {
+                color: 'black',
+              }
+            }
+            return {color: 'white'}
+          }} to={'/'}><div></div></NavLink>
+          <NavLink style={(props)=>{
+            if(props.isActive){
+              return {
+                color: 'black',
+              }
+            }
+            return {color: 'white'}
+          }}  to={'/products'}>Products</NavLink>
+          <NavLink style={(props)=>{
+            if(props.isActive){
+              return {
+                color: 'black',
+              }
+            }
+            return {color: 'white'}
+          }}  to={'/my-cart'}>My Cart</NavLink>
+          <NavLink style={(props)=>{
+            if(props.isActive){
+              return {
+                color: 'black',
+              }
+            }
+            return {color: 'white'}
+          }}  to={'/my-orders'}>My Orders</NavLink>
           </nav>
        </StyledHeader>
 
